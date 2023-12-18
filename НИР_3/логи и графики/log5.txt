@@ -1,0 +1,88 @@
+Beginning AutoGluon training... Time limit = 600s
+AutoGluon will save models to 'autogluon-m4-hourly'
+=================== System Info ===================
+AutoGluon Version:  1.0.0
+Python Version:     3.10.13
+Operating System:   Windows
+Platform Machine:   AMD64
+Platform Version:   10.0.19045
+CPU Count:          4
+GPU Count:          0
+Memory Avail:       1.18 GB / 5.92 GB (19.9%)
+Disk Space Avail:   24.32 GB / 118.01 GB (20.6%)
+===================================================
+Setting presets to: high_quality
+
+Fitting with arguments:
+{'enable_ensemble': True,
+ 'eval_metric': MASE,
+ 'hyperparameters': 'default',
+ 'known_covariates_names': [],
+ 'num_val_windows': 1,
+ 'prediction_length': 48,
+ 'quantile_levels': [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9],
+ 'random_seed': 123,
+ 'refit_every_n_windows': 1,
+ 'refit_full': False,
+ 'target': 'target',
+ 'time_limit': 600,
+ 'verbosity': 2}
+
+Inferred time series frequency: 'H'
+Provided train_data has 148060 rows, 200 time series. Median time series length is 700 (min=700, max=960). 
+
+Provided dataset contains following columns:
+	target:           'target'
+
+AutoGluon will gauge predictive performance using evaluation metric: 'MASE'
+	This metric's sign has been flipped to adhere to being higher_is_better. The metric score can be multiplied by -1 to get the metric value.
+===================================================
+
+Starting training. Start time is 2023-12-18 11:35:53
+Models that will be trained: ['SeasonalNaive', 'CrostonSBA', 'NPTS', 'AutoETS', 'DynamicOptimizedTheta', 'AutoARIMA', 'RecursiveTabular', 'DirectTabular', 'DeepAR', 'TemporalFusionTransformer', 'PatchTST']
+Training timeseries model SeasonalNaive. Training for up to 50.0s of the 599.7s of remaining time.
+	-1.2169       = Validation score (-MASE)
+	0.23    s     = Training runtime
+	8.02    s     = Validation (prediction) runtime
+Training timeseries model CrostonSBA. Training for up to 53.8s of the 591.4s of remaining time.
+	-6.0973       = Validation score (-MASE)
+	0.21    s     = Training runtime
+	20.04   s     = Validation (prediction) runtime
+Training timeseries model NPTS. Training for up to 57.1s of the 571.2s of remaining time.
+	Time limit exceeded... Skipping NPTS.
+Training timeseries model AutoETS. Training for up to 57.1s of the 513.6s of remaining time.
+	Time limit exceeded... Skipping AutoETS.
+Training timeseries model DynamicOptimizedTheta. Training for up to 57.0s of the 456.3s of remaining time.
+	Time limit exceeded... Skipping DynamicOptimizedTheta.
+Training timeseries model AutoARIMA. Training for up to 57.0s of the 399.0s of remaining time.
+	Time limit exceeded... Skipping AutoARIMA.
+Training timeseries model RecursiveTabular. Training for up to 56.8s of the 341.1s of remaining time.
+	-0.9339       = Validation score (-MASE)
+	43.96   s     = Training runtime
+	5.76    s     = Validation (prediction) runtime
+Training timeseries model DirectTabular. Training for up to 58.3s of the 291.3s of remaining time.
+	-1.3337       = Validation score (-MASE)
+	38.70   s     = Training runtime
+	2.38    s     = Validation (prediction) runtime
+Training timeseries model DeepAR. Training for up to 62.6s of the 250.2s of remaining time.
+	-2.3927       = Validation score (-MASE)
+	57.97   s     = Training runtime
+	25.08   s     = Validation (prediction) runtime
+Training timeseries model TemporalFusionTransformer. Training for up to 55.7s of the 167.1s of remaining time.
+	-6.0836       = Validation score (-MASE)
+	57.13   s     = Training runtime
+	2.89    s     = Validation (prediction) runtime
+Training timeseries model PatchTST. Training for up to 53.5s of the 107.1s of remaining time.
+	-2.0844       = Validation score (-MASE)
+	49.40   s     = Training runtime
+	0.95    s     = Validation (prediction) runtime
+Fitting simple weighted ensemble.
+	Ensemble weights: {'DeepAR': 0.02, 'DirectTabular': 0.07, 'RecursiveTabular': 0.88, 'SeasonalNaive': 0.02}
+	-0.9210       = Validation score (-MASE)
+	6.62    s     = Training runtime
+	41.24   s     = Validation (prediction) runtime
+Training complete. Models trained: ['SeasonalNaive', 'CrostonSBA', 'RecursiveTabular', 'DirectTabular', 'DeepAR', 'TemporalFusionTransformer', 'PatchTST', 'WeightedEnsemble']
+Total runtime: 549.92 s
+Best model: WeightedEnsemble
+Best model score: -0.9210
+Model not specified in predict, will default to the model with the best validation score: WeightedEnsemble
