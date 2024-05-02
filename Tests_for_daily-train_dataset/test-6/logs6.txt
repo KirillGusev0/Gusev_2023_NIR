@@ -1,0 +1,70 @@
+No path specified. Models will be saved in: "AutogluonModels\ag-20240427_070354"
+Beginning AutoGluon training... Time limit = 43200s
+AutoGluon will save models to 'AutogluonModels\ag-20240427_070354'
+=================== System Info ===================
+AutoGluon Version:  1.0.0
+Python Version:     3.10.13
+Operating System:   Windows
+Platform Machine:   AMD64
+Platform Version:   10.0.19045
+CPU Count:          4
+GPU Count:          0
+Memory Avail:       1.11 GB / 5.92 GB (18.7%)
+Disk Space Avail:   10.75 GB / 118.01 GB (9.1%)
+===================================================
+Setting presets to: medium_quality
+
+Fitting with arguments:
+{'enable_ensemble': False,
+ 'eval_metric': RMSE,
+ 'hyperparameters': {'DirectTabular': {},
+                     'RecursiveTabular': {},
+                     'TemporalFusionTransformer': {},
+                     'Theta': {}},
+ 'known_covariates_names': [],
+ 'num_val_windows': 4,
+ 'prediction_length': 48,
+ 'quantile_levels': [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9],
+ 'random_seed': 123,
+ 'refit_every_n_windows': 1,
+ 'refit_full': False,
+ 'target': 'target',
+ 'time_limit': 43200,
+ 'val_step_size': 2,
+ 'verbosity': 2}
+
+Inferred time series frequency: 'D'
+Provided train_data has 9964658 rows, 4227 time series. Median time series length is 2940 (min=93, max=9919). 
+	Removing 12 short time series from train_data. Only series with length >= 103 will be used for training.
+	After removing short series, train_data has 9963496 rows, 4215 time series. Median time series length is 2941 (min=103, max=9919). 
+
+Provided dataset contains following columns:
+	target:           'target'
+
+AutoGluon will gauge predictive performance using evaluation metric: 'RMSE'
+	This metric's sign has been flipped to adhere to being higher_is_better. The metric score can be multiplied by -1 to get the metric value.
+===================================================
+
+Starting training. Start time is 2024-04-27 10:04:09
+Models that will be trained: ['Theta', 'RecursiveTabular', 'DirectTabular', 'TemporalFusionTransformer']
+Training timeseries model Theta. Training for up to 10796.1s of the 43184.5s of remaining time.
+	-908.8153     = Validation score (-RMSE)
+	3770.93 s     = Training runtime
+	1194.63 s     = Validation (prediction) runtime
+Training timeseries model RecursiveTabular. Training for up to 12739.3s of the 38218.0s of remaining time.
+	-950.3640     = Validation score (-RMSE)
+	4739.27 s     = Training runtime
+	75.95   s     = Validation (prediction) runtime
+Training timeseries model DirectTabular. Training for up to 16701.0s of the 33401.9s of remaining time.
+	-1308.6547    = Validation score (-RMSE)
+	1601.29 s     = Training runtime
+	42.13   s     = Validation (prediction) runtime
+Training timeseries model TemporalFusionTransformer. Training for up to 31758.0s of the 31758.0s of remaining time.
+	-923.9156     = Validation score (-RMSE)
+	29014.57 s    = Training runtime
+	60.94   s     = Validation (prediction) runtime
+Training complete. Models trained: ['Theta', 'RecursiveTabular', 'DirectTabular', 'TemporalFusionTransformer']
+Total runtime: 40503.31 s
+Best model: Theta
+Best model score: -908.8153
+Model not specified in predict, will default to the model with the best validation score: Theta
