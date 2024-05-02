@@ -1,0 +1,53 @@
+Beginning AutoGluon training... Time limit = 7200s
+AutoGluon will save models to 'AutogluonModels\ag-20240426_143701'
+=================== System Info ===================
+AutoGluon Version:  1.0.0
+Python Version:     3.10.13
+Operating System:   Windows
+Platform Machine:   AMD64
+Platform Version:   10.0.19045
+CPU Count:          4
+GPU Count:          0
+Memory Avail:       0.99 GB / 5.92 GB (16.7%)
+Disk Space Avail:   13.04 GB / 118.01 GB (11.0%)
+===================================================
+Setting presets to: medium_quality
+
+Fitting with arguments:
+{'enable_ensemble': False,
+ 'eval_metric': MSE,
+ 'hyperparameters': {'DirectTabular': {}},
+ 'known_covariates_names': [],
+ 'num_val_windows': 1,
+ 'prediction_length': 48,
+ 'quantile_levels': [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9],
+ 'random_seed': 123,
+ 'refit_every_n_windows': 1,
+ 'refit_full': False,
+ 'target': 'target',
+ 'time_limit': 7200,
+ 'verbosity': 2}
+
+Inferred time series frequency: 'QS-OCT'
+Provided train_data has 2214108 rows, 24000 time series. Median time series length is 88 (min=16, max=866). 
+	Removing 13678 short time series from train_data. Only series with length >= 97 will be used for training.
+	After removing short series, train_data has 1359498 rows, 10322 time series. Median time series length is 118 (min=97, max=866). 
+
+Provided dataset contains following columns:
+	target:           'target'
+
+AutoGluon will gauge predictive performance using evaluation metric: 'MSE'
+	This metric's sign has been flipped to adhere to being higher_is_better. The metric score can be multiplied by -1 to get the metric value.
+===================================================
+
+Starting training. Start time is 2024-04-26 17:37:04
+Models that will be trained: ['DirectTabular']
+Training timeseries model DirectTabular. Training for up to 7197.4s of the 7197.4s of remaining time.
+	-19953249.1042= Validation score (-MSE)
+	55.59   s     = Training runtime
+	19.12   s     = Validation (prediction) runtime
+Training complete. Models trained: ['DirectTabular']
+Total runtime: 74.96 s
+Best model: DirectTabular
+Best model score: -19953249.1042
+Model not specified in predict, will default to the model with the best validation score: DirectTabular

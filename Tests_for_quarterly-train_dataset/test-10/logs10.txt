@@ -1,0 +1,73 @@
+Beginning AutoGluon training... Time limit = 3600s
+AutoGluon will save models to 'AutogluonModels\ag-20240424_132635'
+=================== System Info ===================
+AutoGluon Version:  1.0.0
+Python Version:     3.10.13
+Operating System:   Windows
+Platform Machine:   AMD64
+Platform Version:   10.0.19045
+CPU Count:          4
+GPU Count:          0
+Memory Avail:       1.11 GB / 5.92 GB (18.7%)
+Disk Space Avail:   14.15 GB / 118.01 GB (12.0%)
+===================================================
+Setting presets to: medium_quality
+
+Fitting with arguments:
+{'enable_ensemble': False,
+ 'eval_metric': WQL,
+ 'hyperparameters': 'light',
+ 'known_covariates_names': [],
+ 'num_val_windows': 1,
+ 'prediction_length': 48,
+ 'quantile_levels': [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9],
+ 'random_seed': 123,
+ 'refit_every_n_windows': 1,
+ 'refit_full': False,
+ 'target': 'target',
+ 'time_limit': 3600,
+ 'val_step_size': 2,
+ 'verbosity': 2}
+
+Inferred time series frequency: 'QS-OCT'
+Provided train_data has 2214108 rows, 24000 time series. Median time series length is 88 (min=16, max=866). 
+	Removing 13678 short time series from train_data. Only series with length >= 97 will be used for training.
+	After removing short series, train_data has 1359498 rows, 10322 time series. Median time series length is 118 (min=97, max=866). 
+
+Provided dataset contains following columns:
+	target:           'target'
+
+AutoGluon will gauge predictive performance using evaluation metric: 'WQL'
+	This metric's sign has been flipped to adhere to being higher_is_better. The metric score can be multiplied by -1 to get the metric value.
+===================================================
+
+Starting training. Start time is 2024-04-24 16:26:37
+Models that will be trained: ['Naive', 'SeasonalNaive', 'ETS', 'Theta', 'RecursiveTabular', 'DirectTabular', 'TemporalFusionTransformer']
+Training timeseries model Naive. Training for up to 513.9s of the 3597.5s of remaining time.
+	-0.2622       = Validation score (-WQL)
+	1.75    s     = Training runtime
+	30.76   s     = Validation (prediction) runtime
+Training timeseries model SeasonalNaive. Training for up to 594.2s of the 3564.9s of remaining time.
+	-0.2640       = Validation score (-WQL)
+	1.76    s     = Training runtime
+	24.38   s     = Validation (prediction) runtime
+Training timeseries model ETS. Training for up to 707.7s of the 3538.7s of remaining time.
+	Time limit exceeded... Skipping ETS.
+Training timeseries model Theta. Training for up to 707.5s of the 2830.2s of remaining time.
+	-0.2335       = Validation score (-WQL)
+	1.87    s     = Training runtime
+	168.60  s     = Validation (prediction) runtime
+Training timeseries model RecursiveTabular. Training for up to 886.5s of the 2659.6s of remaining time.
+	-0.2173       = Validation score (-WQL)
+	170.87  s     = Training runtime
+	62.66   s     = Validation (prediction) runtime
+Training timeseries model DirectTabular. Training for up to 1212.9s of the 2425.9s of remaining time.
+	-0.3898       = Validation score (-WQL)
+	3116.22 s     = Training runtime
+	481.44  s     = Validation (prediction) runtime
+Stopping training due to lack of time remaining. Time left: -1172.1 seconds
+Training complete. Models trained: ['Naive', 'SeasonalNaive', 'Theta', 'RecursiveTabular', 'DirectTabular']
+Total runtime: 4769.66 s
+Best model: RecursiveTabular
+Best model score: -0.2173
+Model not specified in predict, will default to the model with the best validation score: RecursiveTabular

@@ -1,0 +1,78 @@
+Beginning AutoGluon training... Time limit = 7200s
+AutoGluon will save models to 'AutogluonModels\ag-20240426_083642'
+=================== System Info ===================
+AutoGluon Version:  1.0.0
+Python Version:     3.10.13
+Operating System:   Windows
+Platform Machine:   AMD64
+Platform Version:   10.0.19045
+CPU Count:          4
+GPU Count:          0
+Memory Avail:       0.91 GB / 5.92 GB (15.4%)
+Disk Space Avail:   14.40 GB / 118.01 GB (12.2%)
+===================================================
+Setting presets to: medium_quality
+
+Fitting with arguments:
+{'enable_ensemble': False,
+ 'eval_metric': MSE,
+ 'hyperparameters': 'light',
+ 'known_covariates_names': [],
+ 'num_val_windows': 1,
+ 'prediction_length': 48,
+ 'quantile_levels': [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9],
+ 'random_seed': 123,
+ 'refit_every_n_windows': 1,
+ 'refit_full': False,
+ 'target': 'target',
+ 'time_limit': 7200,
+ 'val_step_size': 2,
+ 'verbosity': 2}
+
+Inferred time series frequency: 'QS-OCT'
+Provided train_data has 2214108 rows, 24000 time series. Median time series length is 88 (min=16, max=866). 
+	Removing 13678 short time series from train_data. Only series with length >= 97 will be used for training.
+	After removing short series, train_data has 1359498 rows, 10322 time series. Median time series length is 118 (min=97, max=866). 
+
+Provided dataset contains following columns:
+	target:           'target'
+
+AutoGluon will gauge predictive performance using evaluation metric: 'MSE'
+	This metric's sign has been flipped to adhere to being higher_is_better. The metric score can be multiplied by -1 to get the metric value.
+===================================================
+
+Starting training. Start time is 2024-04-26 11:36:46
+Models that will be trained: ['Naive', 'SeasonalNaive', 'ETS', 'Theta', 'RecursiveTabular', 'DirectTabular', 'TemporalFusionTransformer']
+Training timeseries model Naive. Training for up to 1028.0s of the 7196.0s of remaining time.
+	-9228351.9259 = Validation score (-MSE)
+	2.13    s     = Training runtime
+	35.70   s     = Validation (prediction) runtime
+Training timeseries model SeasonalNaive. Training for up to 1193.0s of the 7158.0s of remaining time.
+	-9798028.1486 = Validation score (-MSE)
+	1.92    s     = Training runtime
+	32.44   s     = Validation (prediction) runtime
+Training timeseries model ETS. Training for up to 1424.7s of the 7123.5s of remaining time.
+	-8386511.1355 = Validation score (-MSE)
+	1.92    s     = Training runtime
+	1200.84 s     = Validation (prediction) runtime
+Training timeseries model Theta. Training for up to 1480.2s of the 5920.6s of remaining time.
+	-8361221.8767 = Validation score (-MSE)
+	1.76    s     = Training runtime
+	139.92  s     = Validation (prediction) runtime
+Training timeseries model RecursiveTabular. Training for up to 1926.3s of the 5778.8s of remaining time.
+	-8414840.3633 = Validation score (-MSE)
+	111.89  s     = Training runtime
+	39.81   s     = Validation (prediction) runtime
+Training timeseries model DirectTabular. Training for up to 2813.4s of the 5626.9s of remaining time.
+	-19960903.6503= Validation score (-MSE)
+	76.53   s     = Training runtime
+	26.07   s     = Validation (prediction) runtime
+Training timeseries model TemporalFusionTransformer. Training for up to 5524.1s of the 5524.1s of remaining time.
+	-7662646.4261 = Validation score (-MSE)
+	4978.29 s     = Training runtime
+	93.61   s     = Validation (prediction) runtime
+Training complete. Models trained: ['Naive', 'SeasonalNaive', 'ETS', 'Theta', 'RecursiveTabular', 'DirectTabular', 'TemporalFusionTransformer']
+Total runtime: 6743.98 s
+Best model: TemporalFusionTransformer
+Best model score: -7662646.4261
+Model not specified in predict, will default to the model with the best validation score: TemporalFusionTransformer
