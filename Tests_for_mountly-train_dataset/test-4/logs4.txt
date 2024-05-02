@@ -1,0 +1,56 @@
+Beginning AutoGluon training... Time limit = 43200s
+AutoGluon will save models to 'AutogluonModels\ag-20240501_073903'
+=================== System Info ===================
+AutoGluon Version:  1.0.0
+Python Version:     3.10.13
+Operating System:   Windows
+Platform Machine:   AMD64
+Platform Version:   10.0.19045
+CPU Count:          4
+GPU Count:          0
+Memory Avail:       1.13 GB / 5.92 GB (19.1%)
+Disk Space Avail:   6.06 GB / 118.01 GB (5.1%)
+	WARNING: Available disk space is low and there is a risk that AutoGluon will run out of disk during fit, causing an exception. 
+	We recommend a minimum available disk space of 10 GB, and large datasets may require more.
+===================================================
+Setting presets to: high_quality
+
+Fitting with arguments:
+{'enable_ensemble': False,
+ 'eval_metric': MSE,
+ 'hyperparameters': {'TemporalFusionTransformer': {}},
+ 'known_covariates_names': [],
+ 'num_val_windows': 4,
+ 'prediction_length': 48,
+ 'quantile_levels': [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9],
+ 'random_seed': 123,
+ 'refit_every_n_windows': 1,
+ 'refit_full': False,
+ 'target': 'target',
+ 'time_limit': 43200,
+ 'val_step_size': 2,
+ 'verbosity': 2}
+
+Inferred time series frequency: 'MS'
+Provided train_data has 10382411 rows, 48000 time series. Median time series length is 202 (min=42, max=2794). 
+	Removing 14055 short time series from train_data. Only series with length >= 103 will be used for training.
+	After removing short series, train_data has 9354738 rows, 33945 time series. Median time series length is 280 (min=103, max=2794). 
+
+Provided dataset contains following columns:
+	target:           'target'
+
+AutoGluon will gauge predictive performance using evaluation metric: 'MSE'
+	This metric's sign has been flipped to adhere to being higher_is_better. The metric score can be multiplied by -1 to get the metric value.
+===================================================
+
+Starting training. Start time is 2024-05-01 10:39:16
+Models that will be trained: ['TemporalFusionTransformer']
+Training timeseries model TemporalFusionTransformer. Training for up to 43184.6s of the 43184.6s of remaining time.
+	-2379701.1256 = Validation score (-MSE)
+	24398.96 s    = Training runtime
+	299.11  s     = Validation (prediction) runtime
+Training complete. Models trained: ['TemporalFusionTransformer']
+Total runtime: 24704.22 s
+Best model: TemporalFusionTransformer
+Best model score: -2379701.1256
+Model not specified in predict, will default to the model with the best validation score: TemporalFusionTransformer
