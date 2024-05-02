@@ -1,0 +1,81 @@
+Beginning AutoGluon training... Time limit = 7200s
+AutoGluon will save models to 'AutogluonModels\ag-20240429_071035'
+=================== System Info ===================
+AutoGluon Version:  1.0.0
+Python Version:     3.10.13
+Operating System:   Windows
+Platform Machine:   AMD64
+Platform Version:   10.0.19045
+CPU Count:          4
+GPU Count:          0
+Memory Avail:       0.87 GB / 5.92 GB (14.7%)
+Disk Space Avail:   9.10 GB / 118.01 GB (7.7%)
+	WARNING: Available disk space is low and there is a risk that AutoGluon will run out of disk during fit, causing an exception. 
+	We recommend a minimum available disk space of 10 GB, and large datasets may require more.
+===================================================
+Setting presets to: medium_quality
+
+Fitting with arguments:
+{'enable_ensemble': False,
+ 'eval_metric': MAE,
+ 'hyperparameters': 'light',
+ 'known_covariates_names': [],
+ 'num_val_windows': 4,
+ 'prediction_length': 48,
+ 'quantile_levels': [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9],
+ 'random_seed': 123,
+ 'refit_every_n_windows': 1,
+ 'refit_full': False,
+ 'target': 'target',
+ 'time_limit': 7200,
+ 'val_step_size': 2,
+ 'verbosity': 2}
+
+Inferred time series frequency: 'N'
+Provided train_data has 720458 rows, 23000 time series. Median time series length is 29 (min=13, max=835). 
+Time series in train_data are too short for chosen num_val_windows=4. Reducing num_val_windows to 1.
+	Removing 22841 short time series from train_data. Only series with length >= 97 will be used for training.
+	After removing short series, train_data has 37773 rows, 159 time series. Median time series length is 207 (min=97, max=835). 
+
+Provided dataset contains following columns:
+	target:           'target'
+
+AutoGluon will gauge predictive performance using evaluation metric: 'MAE'
+	This metric's sign has been flipped to adhere to being higher_is_better. The metric score can be multiplied by -1 to get the metric value.
+===================================================
+
+Starting training. Start time is 2024-04-29 10:10:36
+Models that will be trained: ['Naive', 'SeasonalNaive', 'ETS', 'Theta', 'RecursiveTabular', 'DirectTabular', 'TemporalFusionTransformer']
+Training timeseries model Naive. Training for up to 1028.4s of the 7199.1s of remaining time.
+	-1333.6023    = Validation score (-MAE)
+	0.07    s     = Training runtime
+	8.69    s     = Validation (prediction) runtime
+Training timeseries model SeasonalNaive. Training for up to 1198.4s of the 7190.3s of remaining time.
+	-1333.6023    = Validation score (-MAE)
+	0.07    s     = Training runtime
+	0.52    s     = Validation (prediction) runtime
+Training timeseries model ETS. Training for up to 1437.9s of the 7189.7s of remaining time.
+	-1149.3580    = Validation score (-MAE)
+	0.07    s     = Training runtime
+	57.51   s     = Validation (prediction) runtime
+Training timeseries model Theta. Training for up to 1783.0s of the 7132.1s of remaining time.
+	-1209.7506    = Validation score (-MAE)
+	0.06    s     = Training runtime
+	25.91   s     = Validation (prediction) runtime
+Training timeseries model RecursiveTabular. Training for up to 2368.7s of the 7106.1s of remaining time.
+	-1136.5889    = Validation score (-MAE)
+	4.46    s     = Training runtime
+	1.12    s     = Validation (prediction) runtime
+Training timeseries model DirectTabular. Training for up to 3550.2s of the 7100.5s of remaining time.
+	-2914.8261    = Validation score (-MAE)
+	0.89    s     = Training runtime
+	0.39    s     = Validation (prediction) runtime
+Training timeseries model TemporalFusionTransformer. Training for up to 7099.2s of the 7099.2s of remaining time.
+	-1151.5150    = Validation score (-MAE)
+	6396.23 s     = Training runtime
+	2.73    s     = Validation (prediction) runtime
+Training complete. Models trained: ['Naive', 'SeasonalNaive', 'ETS', 'Theta', 'RecursiveTabular', 'DirectTabular', 'TemporalFusionTransformer']
+Total runtime: 6498.92 s
+Best model: RecursiveTabular
+Best model score: -1136.5889
+Model not specified in predict, will default to the model with the best validation score: RecursiveTabular

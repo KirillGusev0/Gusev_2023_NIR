@@ -1,0 +1,81 @@
+Beginning AutoGluon training... Time limit = 7200s
+AutoGluon will save models to 'AutogluonModels\ag-20240429_111518'
+=================== System Info ===================
+AutoGluon Version:  1.0.0
+Python Version:     3.10.13
+Operating System:   Windows
+Platform Machine:   AMD64
+Platform Version:   10.0.19045
+CPU Count:          4
+GPU Count:          0
+Memory Avail:       0.77 GB / 5.92 GB (13.1%)
+Disk Space Avail:   8.94 GB / 118.01 GB (7.6%)
+	WARNING: Available disk space is low and there is a risk that AutoGluon will run out of disk during fit, causing an exception. 
+	We recommend a minimum available disk space of 10 GB, and large datasets may require more.
+===================================================
+Setting presets to: medium_quality
+
+Fitting with arguments:
+{'enable_ensemble': False,
+ 'eval_metric': RMSE,
+ 'hyperparameters': 'light',
+ 'known_covariates_names': [],
+ 'num_val_windows': 4,
+ 'prediction_length': 48,
+ 'quantile_levels': [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9],
+ 'random_seed': 123,
+ 'refit_every_n_windows': 1,
+ 'refit_full': False,
+ 'target': 'target',
+ 'time_limit': 7200,
+ 'val_step_size': 2,
+ 'verbosity': 2}
+
+Inferred time series frequency: 'N'
+Provided train_data has 720458 rows, 23000 time series. Median time series length is 29 (min=13, max=835). 
+Time series in train_data are too short for chosen num_val_windows=4. Reducing num_val_windows to 1.
+	Removing 22841 short time series from train_data. Only series with length >= 97 will be used for training.
+	After removing short series, train_data has 37773 rows, 159 time series. Median time series length is 207 (min=97, max=835). 
+
+Provided dataset contains following columns:
+	target:           'target'
+
+AutoGluon will gauge predictive performance using evaluation metric: 'RMSE'
+	This metric's sign has been flipped to adhere to being higher_is_better. The metric score can be multiplied by -1 to get the metric value.
+===================================================
+
+Starting training. Start time is 2024-04-29 14:15:19
+Models that will be trained: ['Naive', 'SeasonalNaive', 'ETS', 'Theta', 'RecursiveTabular', 'DirectTabular', 'TemporalFusionTransformer']
+Training timeseries model Naive. Training for up to 1028.4s of the 7199.1s of remaining time.
+	-2962.0785    = Validation score (-RMSE)
+	0.09    s     = Training runtime
+	7.94    s     = Validation (prediction) runtime
+Training timeseries model SeasonalNaive. Training for up to 1198.5s of the 7191.0s of remaining time.
+	-2962.0785    = Validation score (-RMSE)
+	0.06    s     = Training runtime
+	0.45    s     = Validation (prediction) runtime
+Training timeseries model ETS. Training for up to 1438.1s of the 7190.5s of remaining time.
+	-2824.1442    = Validation score (-RMSE)
+	0.06    s     = Training runtime
+	86.18   s     = Validation (prediction) runtime
+Training timeseries model Theta. Training for up to 1776.1s of the 7104.2s of remaining time.
+	-2885.1248    = Validation score (-RMSE)
+	0.09    s     = Training runtime
+	32.85   s     = Validation (prediction) runtime
+Training timeseries model RecursiveTabular. Training for up to 2357.1s of the 7071.3s of remaining time.
+	-3123.0719    = Validation score (-RMSE)
+	4.99    s     = Training runtime
+	1.65    s     = Validation (prediction) runtime
+Training timeseries model DirectTabular. Training for up to 3532.3s of the 7064.6s of remaining time.
+	-4389.3928    = Validation score (-RMSE)
+	0.95    s     = Training runtime
+	0.38    s     = Validation (prediction) runtime
+Training timeseries model TemporalFusionTransformer. Training for up to 7063.2s of the 7063.2s of remaining time.
+	-2665.2481    = Validation score (-RMSE)
+	6365.23 s     = Training runtime
+	2.67    s     = Validation (prediction) runtime
+Training complete. Models trained: ['Naive', 'SeasonalNaive', 'ETS', 'Theta', 'RecursiveTabular', 'DirectTabular', 'TemporalFusionTransformer']
+Total runtime: 6503.81 s
+Best model: TemporalFusionTransformer
+Best model score: -2665.2481
+Model not specified in predict, will default to the model with the best validation score: TemporalFusionTransformer
